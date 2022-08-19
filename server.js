@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors(corsOptions));
 
-const URI = process.env.DB_URI
+const URI = 'mongodb+srv://ksarc:159635marco@cluster0.dmbpu.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(URI,
   {
