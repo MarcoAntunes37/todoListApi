@@ -7,7 +7,7 @@ require('dotenv').config()
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "https://todo-list-marcoantunes37.vercel.app"
 };
 
 app.use(express.json());
