@@ -8,7 +8,7 @@ require('dotenv').config()
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "*"
 };
 
 app.use(express.json());
@@ -19,7 +19,7 @@ app.use(cors(corsOptions));
 
 const URI = process.env.DB_URI
 
-mongoose.connect('mongodb+srv://ksarc:159635marco@cluster0.dmbpu.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
