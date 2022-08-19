@@ -6,15 +6,9 @@ require('dotenv').config()
 
 const app = express();
 
-var corsOptions = {
-  origin: "https://todo-list-marcoantunes37.vercel.app"
-};
-
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
-
-app.use(cors(corsOptions));
 
 mongoose.connect('mongodb+srv://ksarc:159635marco@cluster0.dmbpu.mongodb.net/?retryWrites=true&w=majority',
   {
