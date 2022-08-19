@@ -12,6 +12,7 @@ exports.saveData = async (req, res) => {
   
   await list.save()
     .then(data => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.status(200)
         .send(data)
     })
@@ -26,6 +27,7 @@ exports.saveData = async (req, res) => {
 exports.findAll = async (req, res) => {
   await TodoList.find()
     .then(data => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.status(200)
         .send(data);
     })
@@ -41,6 +43,7 @@ exports.findById = async (req, res) => {
   const id = req.params.id
   await TodoList.findById(id)
     .then(data => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.status(200)
         .send(data);
     })
@@ -65,6 +68,7 @@ exports.update = async (req, res) => {
 
   await TodoList.findOneAndUpdate(id, list)
     .then(data => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.status(200)
         res.send({data})
     })
@@ -82,6 +86,7 @@ exports.delete = async (req, res) => {
   await TodoList.findByIdAndDelete(id)
   .then(data => {
     if(data){
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.status(200)
       .send(data)
     }else{
